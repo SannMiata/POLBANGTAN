@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polbangtan Yogyakarta Magelang</title>
+
+  <!-- Font & Icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      color:#333;
+      background:#f5f7f6;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    /* ===== HEADER ===== */
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      background:#2e7d32;
+      z-index:999;
+      box-shadow:0 4px 12px rgba(0,0,0,.15);
+    }
+
+    nav{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1rem 1.2rem;
+      color:#fff;
+    }
+
+    .logo{
+      font-weight:700;
+      font-size:1.2rem;
+    }
+
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:1.8rem;
+    }
+
+    .nav-links li a{
+      font-weight:500;
+      transition:.3s;
+    }
+
+    .nav-links li a:hover{
+      color:#ffeb3b;
+    }
+
+    .hamburger{
+      display:none;
+      font-size:1.5rem;
+      cursor:pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+      height:100vh;
+      background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      padding-top:80px;
+      position:relative;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.65)
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:650px;
+      padding:0 1.5rem;
+      color:#fff;
+    }
+
+    .hero-content h1{
+      font-size:2.6rem;
+      font-weight:700;
+      line-height:1.25;
+      margin-bottom:1rem;
+    }
+
+    .hero-content p{
+      font-size:1.1rem;
+      opacity:.95;
+      margin-bottom:2rem;
+    }
+
+    .btn-hero{
+      display:inline-block;
+      background:#ffeb3b;
+      color:#222;
+      padding:.9rem 1.8rem;
+      border-radius:30px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .btn-hero:hover{
+      background:#fdd835;
+      transform:translateY(-2px);
+    }
+
+    /* ===== FAKULTAS SECTION ===== */
+    .section{
+      max-width:1200px;
+      margin:auto;
+      padding:4rem 1.2rem;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:3rem;
+    }
+
+    .section-title h2{
+      font-size:2.2rem;
+      color:#2e7d32;
+      margin-bottom:.5rem;
+    }
+
+    .section-title p{
+      color:#555;
+    }
+
+    .faculty-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+
+    .faculty-card{
+      background:#fff;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,.1);
+      transition:.3s;
+    }
+
+    .faculty-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .faculty-card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+
+    .faculty-content{
+      padding:1.5rem;
+    }
+
+    .faculty-content h3{
+      color:#2e7d32;
+      margin-bottom:.6rem;
+    }
+
+    .faculty-content p{
+      font-size:.95rem;
+      margin-bottom:1rem;
+      color:#555;
+    }
+
+    .faculty-content a{
+      font-weight:600;
+      color:#2e7d32;
+    }
+
+    /* ===== FOOTER ===== */
+    footer{
+      background:#1b5e20;
+      color:#fff;
+      padding:3rem 1.2rem 1.5rem;
+    }
+
+    .footer-grid{
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:2rem;
+    }
+
+    footer h4{
+      margin-bottom:1rem;
+    }
+
+    footer p,footer a{
+      font-size:.9rem;
+      opacity:.9;
+    }
+
+    .social a{
+      font-size:1.3rem;
+      margin-right:.8rem;
+    }
+
+    .copyright{
+      text-align:center;
+      margin-top:2rem;
+      font-size:.85rem;
+      opacity:.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:768px){
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#2e7d32;
+        flex-direction:column;
+        padding:1rem 0;
+      }
+
+      .nav-links.active{display:flex}
+
+      .nav-links li{
+        text-align:center;
+        padding:.8rem 0;
+      }
+
+      .hamburger{display:block}
+
+      .hero-content h1{
+        font-size:2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <div class="logo">Polbangtan YOMA</div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="fakultas.html">Jurusan</a></li>
+      <li><a href="berita.html">Berita</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Politeknik Pembangunan Pertanian</h1>
+    <p>Pendidikan vokasi pertanian untuk mencetak SDM unggul dan berkelanjutan</p>
+    <a href="tentang.html" class="btn-hero">Profil Kampus</a>
+  </div>
+</section>
+
+<!-- FAKULTAS -->
+<section class="section">
+  <div class="section-title">
+    <h2>Jurusan</h2>
+    <p>Pilih Jurusan untuk melihat program studi</p>
+  </div>
+
+  <div class="faculty-grid">
+    <div class="faculty-card">
+      <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b" alt="">
+      <div class="faculty-content">
+        <h3>Jurusan Pertanian</h3>
+        <p>Pendidikan vokasi bidang pertanian berkelanjutan.</p>
+        <a href="fakultas-pertanian.html">Lihat Detail →</a>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://images.unsplash.com/photo-1551727974-8af20a3322f1" alt="">
+      <div class="faculty-content">
+        <h3>Jurusan Peternakan</h3>
+        <p>Fokus pada produksi ternak dan kesejahteraan hewan.</p>
+        <a href="fakultas-peternakan.html">Lihat Detail →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Polbangtan YOMA</h4>
+      <p>Perguruan tinggi vokasi pertanian di bawah Kementerian Pertanian RI.</p>
+    </div>
+
+    <div>
+      <h4>Kontak</h4>
+      <p>Yogyakarta – Magelang<br>Email: info@polbangtanyoma.ac.id</p>
+    </div>
+
+    <div>
+      <h4>Sosial Media</h4>
+      <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2025 Polbangtan Yogyakarta Magelang
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(){
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
