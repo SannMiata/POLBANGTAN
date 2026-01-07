@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jurusan Pertanian | Polbangtan YOMA</title>
+
+  <!-- Font & Icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f4f6f5;
+      color:#333;
+    }
+    a{text-decoration:none;color:inherit}
+
+    /* HEADER */
+    header{
+      background:#2e7d32;
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:999;
+      box-shadow:0 4px 10px rgba(0,0,0,.15);
+    }
+    nav{
+      max-width:1200px;
+      margin:auto;
+      padding:1rem 1.2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color:#fff;
+    }
+    .logo{font-weight:700}
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:1.6rem;
+    }
+    .nav-links a:hover{color:#ffeb3b}
+    .hamburger{display:none;font-size:1.5rem;cursor:pointer}
+
+    /* HERO */
+    .hero{
+      height:60vh;
+      background:url('https://raw.githubusercontent.com/SannMiata/POLBANGTAN/refs/heads/main/images.png') center/cover no-repeat;
+      position:relative;
+      display:flex;
+      align-items:center;
+      padding-top:80px;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.6);
+    }
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:700px;
+      padding:0 1.5rem;
+      color:#fff;
+    }
+    .hero-content h1{
+      font-size:2.4rem;
+      margin-bottom:.8rem;
+    }
+    .hero-content p{
+      font-size:1.05rem;
+      opacity:.95;
+    }
+
+    /* SECTION */
+    .section{
+      max-width:1200px;
+      margin:auto;
+      padding:4rem 1.5rem;
+    }
+    .section-title{
+      text-align:center;
+      margin-bottom:3rem;
+    }
+    .section-title h2{
+      color:#2e7d32;
+      font-size:2rem;
+      margin-bottom:.5rem;
+    }
+    .section-title p{
+      color:#555;
+      max-width:700px;
+      margin:auto;
+    }
+
+    /* PRODI CARDS */
+    .prodi-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .prodi-card{
+      background:#fff;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,.1);
+      transition:.3s;
+    }
+    .prodi-card:hover{
+      transform:translateY(-8px);
+    }
+    .prodi-card img{
+      width:100%;
+      height:190px;
+      object-fit:cover;
+    }
+    .prodi-content{
+      padding:1.5rem;
+    }
+    .prodi-content h3{
+      color:#2e7d32;
+      margin-bottom:.6rem;
+    }
+    .prodi-content p{
+      font-size:.95rem;
+      color:#555;
+      margin-bottom:1.2rem;
+    }
+    .prodi-content a{
+      font-weight:600;
+      color:#2e7d32;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#1b5e20;
+      color:#fff;
+      text-align:center;
+      padding:2rem 1rem;
+      font-size:.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .nav-links{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#2e7d32;
+      }
+      .nav-links.active{display:flex}
+      .nav-links li{text-align:center;padding:.8rem}
+      .hamburger{display:block}
+      .hero-content h1{font-size:2rem}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <div class="logo">Polbangtan YOMA</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="fakultas.html">Jurusan</a></li>
+      <li><a href="#">Berita</a></li>
+      <li><a href="#">Galeri</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Jurusan Pertanian</h1>
+    <p>Jurusan pertanian.</p>
+  </div>
+</section>
+
+<!-- PRODI -->
+<section class="section">
+  <div class="section-title">
+    <h2>Program Studi</h2>
+    <p>Prodi Jurusan Pertanian</p>
+  </div>
+
+  <div class="prodi-grid">
+    <!-- PRODI 1 -->
+    <div class="prodi-card">
+      <img src="https://raw.githubusercontent.com/SannMiata/POLBANGTAN/refs/heads/main/images.png" alt="">
+      <div class="prodi-content">
+        <h3>Penyuluhan Pertanian Berkelanjutan</h3>
+        <p>Penyuluh pertanian.</p>
+        <a href="prodi-ppb.html">Lihat Detail →</a>
+      </div>
+    </div>
+
+    <!-- PRODI 2 -->
+    <div class="prodi-card">
+      <img src="https://raw.githubusercontent.com/SannMiata/POLBANGTAN/refs/heads/main/images.png" alt="">
+      <div class="prodi-content">
+        <h3>Agribisnis Hortikultura</h3>
+        <p>Pengelolaan usaha hortikultura.</p>
+        <a href="prodi-agribisnis.html">Lihat Detail →</a>
+      </div>
+    </div>
+
+    <!-- PRODI 3 -->
+    <div class="prodi-card">
+      <img src="https://raw.githubusercontent.com/SannMiata/POLBANGTAN/refs/heads/main/images.png" alt="">
+      <div class="prodi-content">
+        <h3>Teknologi Benih</h3>
+        <p>Bidang produksi dan pengujian mutu benih.</p>
+        <a href="prodi-teknologi-benih.html">Lihat Detail →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Polbangtan Yogyakarta Magelang
+</footer>
+
+<script>
+  function toggleMenu(){
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
